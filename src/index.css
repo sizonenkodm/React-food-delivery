@@ -11,3 +11,277 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  padding: 0 1rem;
+}
+
+.container {
+  width: calc(100vw - 40px);
+  margin: 0 auto;
+}
+
+.content {
+  max-height: calc(100vh - 70px - 64px);
+  padding: 1.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
+.head-img {
+  position: relative;
+  width: 100%;
+}
+
+.head-img img {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 70px - 70px - 30px);
+  filter: brightness(40%);
+  object-fit: cover;
+  object-position: 0 0;
+  top: 0;
+  left: 0;
+}
+
+.head-img__content {
+  position: absolute;
+  color: #fff;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  min-width: 320px;
+  max-width: 382px;
+}
+
+.head-img__content h1 {
+  text-align: center;
+  background-color: rgba(255, 255, 255, .3);
+  border-radius: 20px;
+}
+
+.place-list {
+  border: 1px solid #bcaaa4;
+  max-height: calc(100vh - 70px - 70px - 30px);
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.store {
+  border: 2px solid #fff;
+  margin: 30px 20px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+.goods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  max-height: calc(100vh - 70px - 70px - 30px);
+  overflow: scroll;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.cart {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 5;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #fff;
+}
+
+@media (min-width: 767px) {
+  .cart {
+    top: 6rem;
+    bottom: unset;
+  }
+}
+
+@media (max-width: 767px) {
+  .collection-item {
+    font-size: 11px;
+  }
+
+  .collection-item button:not(.btn-small) {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050;
+  display: block;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  min-height: 100vh;
+}
+
+.basket-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 50rem;
+  max-width: 95%;
+  animation: show 500ms, ease-in-out;
+}
+
+.basket-item {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basket-item-info {
+  width: 40rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basket-item img {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.basket-close {
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #fff;
+}
+
+.basket-delete {
+  cursor: pointer;
+  color: #bcaaa4;
+}
+
+#cart-empty {
+  background-color: rgba(0, 0, 0, .7);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  color: #fff;
+  z-index: 100;
+}
+
+#form {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(247, 247, 247);
+  width: 60rem;
+  max-width: 95%;
+  max-height: 80%;
+  border-radius: 20px;
+  animation: show 500ms, ease-in-out;
+}
+
+#form .input {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 340px;
+  height: 50px;
+  margin-top: 30px;
+  padding-left: 10px;
+}
+
+#form .button {
+  width: 200px;
+  height: 50px;
+  background-color: #bcaaa4;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+#form .button:hover {
+  background-color: #bcaaa4;
+}
+
+#form .button:disabled {
+  background-color: rgb(199, 197, 197);
+  color: #fff;
+}
+
+.btn-quantity,
+.btn-quantity:focus {
+  background-color: #bcaaa4;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.btn-small {
+  background-color: #bcaaa4;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.btn-small:hover,
+.btn-small:focus {
+  background-color: #bcaaa4;
+}
+
+#toast-container {
+  top: 3rem !important;
+  animation: fade-in 250ms ease-in-out;
+}
+
+@keyframes show {
+  from {
+    top: 70%;
+    opacity: 0;
+  }
+
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(orem);
+  }
+}
