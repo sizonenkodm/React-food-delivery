@@ -48,11 +48,11 @@ nav {
 .head-img__content {
   position: absolute;
   color: #fff;
-  top: 40%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -40%);
-  min-width: 320px;
-  max-width: 382px;
+  transform: translate(-50%, -50%);
+  min-width: 100px;
+  max-width: 380px;
 }
 
 .head-img__content h1 {
@@ -266,7 +266,7 @@ nav {
   .content {
     height: calc(100vh - 70px - 64px);
     display: flex;
-    flex-basis: 50%;
+    /* flex-basis: 50%; */
     flex-direction: column;
   }
 
@@ -275,28 +275,21 @@ nav {
     overflow: scroll;
   }
 
+  .items-list {
+    height: 60%;
+    overflow: scroll;
+  }
+
   .head-img {
     height: 100%;
-    overflow: scroll;
   }
 
   .head-img img {
     height: 100%;
-    overflow: scroll;
-  }
-
-  .head-img__content {
-    width: 50%;
-    height: 50%;
   }
 
   .head-img__content h1 {
-    font-size: 40px;
-  }
-
-  .items-list {
-    height: 100%;
-    overflow: scroll;
+    font-size: 2rem;
   }
 
   .basket-item-info {
