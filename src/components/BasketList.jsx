@@ -16,7 +16,7 @@ const BasketList = () => {
     }, 0);
 
     return (
-        <div>
+        <div className='basket-list-container'>
             {
                 openForm
                     ? <Form totalPrice={totalPrice} />

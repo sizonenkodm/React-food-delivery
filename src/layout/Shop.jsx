@@ -101,7 +101,7 @@ const Shop = (props) => {
                     (!mcdonalds && !kfc && !egersund)
                         ? (
                             <div className='head-img'>
-                                <img src="Assets/1-3.png" alt="background" />
+                                <img src="React-food-delivery/Assets/1-3.png" alt="background" />
                                 <div className='head-img__content'>
                                     <h1>Найшвидша доставка твоїх улюблених страв!</h1>
                                 </div>

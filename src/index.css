@@ -95,31 +95,13 @@ nav {
 
 .cart {
   position: fixed;
-  bottom: 2rem;
+  bottom: 4rem;
   right: 2rem;
   cursor: pointer;
   z-index: 5;
   padding: 1rem;
   border-radius: 5px;
   border: 1px solid #fff;
-}
-
-@media (min-width: 767px) {
-  .cart {
-    top: 6rem;
-    bottom: unset;
-  }
-}
-
-@media (max-width: 767px) {
-  .collection-item {
-    font-size: 11px;
-  }
-
-  .collection-item button:not(.btn-small) {
-    width: 21px;
-    height: 21px;
-  }
 }
 
 .modal {
@@ -145,6 +127,8 @@ nav {
   background-color: #fff;
   width: 50rem;
   max-width: 95%;
+  max-height: 70%;
+  overflow: scroll;
   animation: show 500ms, ease-in-out;
 }
 
@@ -260,6 +244,69 @@ nav {
 #toast-container {
   top: 3rem !important;
   animation: fade-in 250ms ease-in-out;
+}
+
+@media (min-width: 767px) {
+  .cart {
+    top: 6rem;
+    bottom: unset;
+  }
+}
+
+@media (max-width: 767px) {
+  .collection-item {
+    font-size: 11px;
+  }
+
+  .collection-item button:not(.btn-small) {
+    width: 21px;
+    height: 21px;
+  }
+
+  .content {
+    height: calc(100vh - 70px - 64px);
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+  }
+
+  .place-list {
+    height: 80%;
+    overflow: scroll;
+  }
+
+  .head-img {
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .head-img img {
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .head-img__content {
+    width: 50%;
+    height: 50%;
+  }
+
+  .head-img__content h1 {
+    font-size: 40px;
+  }
+
+  .items-list {
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .basket-item-info {
+    width: 15rem;
+  }
+
+  .basket-item img {
+    max-height: 50px;
+    max-width: 50px;
+  }
 }
 
 @keyframes show {

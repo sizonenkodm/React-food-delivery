@@ -9,7 +9,7 @@ const Alert = () => {
     } = useContext(ShopContext);
 
     useEffect(() => {
-        const timerId = setTimeout(closeAlert, 3000);
+        const timerId = setTimeout(closeAlert, 1000);
 
         return () => {
             clearTimeout(timerId);
