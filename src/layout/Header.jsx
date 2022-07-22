@@ -7,18 +7,20 @@ const Header = (props) => {
     return (
         <nav className="brown lighten-3">
             <div className="nav-wrapper">
-                <a
-                    href="#"
+                <span
+                    id='home'
                     className="brand-logo"
                     onClick={() => {
                         props.setMcdonalds(false);
                         props.setKfc(false);
                         props.setEgersund(false);
                         order.length = 0;
+                        localStorage.clear();
+                        window.location.reload();
                     }}
                 >
                     Home
-                </a>
+                </span>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li><a href="https://github.com/sizonenkodm/React-food-delivery" target='_blank'>Repo</a></li>
                 </ul>

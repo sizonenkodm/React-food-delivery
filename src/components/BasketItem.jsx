@@ -7,6 +7,7 @@ const BasketItem = (props) => {
         title,
         price,
         photo,
+        type,
         quantity,
     } = props;
 
@@ -18,7 +19,7 @@ const BasketItem = (props) => {
                 <div>
                     {title} {(quantity > 1) ? price : null}x{quantity} = {price * quantity}
                 </div>
-                <img src={photo} alt={title} />
+                <img src={photo} alt={type} />
             </div>
             <div>
                 <span

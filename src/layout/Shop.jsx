@@ -65,7 +65,7 @@ const Shop = (props) => {
         <main className="container content">
             <div className='place-list'>
                 <button className='store btn brown lighten-3'
-                    disabled={(kfc || egersund) && order.length}
+                    disabled={order.length && order[0].type !== 'mcdonalds'}
                     onClick={() => {
                         setMcdonalds(true);
                         setKfc(false);
@@ -75,7 +75,7 @@ const Shop = (props) => {
                     McDonalds
                 </button>
                 <button className='store btn brown lighten-3'
-                    disabled={(mcdonalds || egersund) && order.length}
+                    disabled={order.length && order[0].type !== 'kfc'}
                     onClick={() => {
                         setKfc(true);
                         setMcdonalds(false);
@@ -85,7 +85,7 @@ const Shop = (props) => {
                     KFC
                 </button>
                 <button className='store btn brown lighten-3'
-                    disabled={(kfc || mcdonalds) && order.length}
+                    disabled={order.length && order[0].type !== 'egersund'}
                     onClick={() => {
                         setEgersund(true);
                         setKfc(false);
@@ -96,7 +96,7 @@ const Shop = (props) => {
                 </button>
             </div>
             <div className='items-list'>
-                <Cart quantity={order.length} />
+                <Cart />
                 {
                     (!mcdonalds && !kfc && !egersund)
                         ? (

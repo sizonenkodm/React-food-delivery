@@ -102,6 +102,7 @@ const Form = ({ totalPrice }) => {
             .finally(() => {
                 clearInputs();
                 order.length = 0;
+                localStorage.clear();
                 setTimeout(() => {
                     setSuccessMessage('');
                     handleBasketShow();

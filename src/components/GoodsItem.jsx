@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { ShopContext } from '../context';
 
 const GoodsItem = (props) => {
@@ -7,10 +7,14 @@ const GoodsItem = (props) => {
         title,
         price,
         photo,
+        type,
     } = props;
 
-    const { addToBasket } = useContext(ShopContext);
+    const { order, addToBasket } = useContext(ShopContext);
 
+    useEffect(() => {
+        localStorage.setItem('order', JSON.stringify(order));
+    }, [order]);
 
     return (
         <div className="card">
@@ -27,7 +31,8 @@ const GoodsItem = (props) => {
                         id,
                         title,
                         price,
-                        photo
+                        photo,
+                        type
                     })}
                 >
                     <i>Додати</i>

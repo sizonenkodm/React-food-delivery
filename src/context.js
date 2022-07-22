@@ -3,10 +3,17 @@ import reducer from './reducer';
 
 export const ShopContext = createContext();
 
+function setDefaultOrderValue() {
+    const orderSaved = localStorage.getItem('order');
+    return (
+        orderSaved ? JSON.parse(orderSaved) : []
+    );
+}
+
 const initialState = {
     goods: [],
     loading: true,
-    order: [],
+    order: setDefaultOrderValue(),
     isBasketShow: false,
     alertName: ''
 }
