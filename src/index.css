@@ -97,6 +97,10 @@ nav {
   flex-grow: 1;
 }
 
+.card-action button {
+  max-width: 50%;
+}
+
 .cart {
   position: fixed;
   bottom: 4rem;
